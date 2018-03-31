@@ -4,7 +4,7 @@ const {PORT} = require('./config');
 
 app.use(express.static('public'));
 
-app.get("/water", (request, response) => {
+app.get("/", (request, response) => {
   response.sendFile(__dirname + '/public/index.html');
 });
 
