@@ -1,0 +1,19 @@
+{
+  "name": "takehome",
+  "version": "1.0.0",
+  "description": "Take-Home Projct",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagineLife/takehome.git"
+  },
+  "author": "Eric Laursen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imagineLife/takehome/issues"
+  },
+  "homepage": "https://github.com/imagineLife/takehome#readme"
+}
