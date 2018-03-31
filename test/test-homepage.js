@@ -6,7 +6,6 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Initial HTML page', function() {
-  // note there's no `done` parameter passed to `function()` below
   it('should return 200 status', function() {
     // since we're returning `chai.request.get.then...`
     // we don't need a `done` call back
