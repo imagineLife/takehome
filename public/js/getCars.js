@@ -1,5 +1,17 @@
+let getCarsURL = '/getcars';
+
 function getCarsFromAPI(){
-	console.log('getCars');
+	const APICallSettings = {
+      url: getCarsURL,  
+      dataType: 'json'
+    };
+
+	$.ajax(APICallSettings)
+	.then((res) => console.log('done!', res))
+	.catch((err)=>{
+		console.log(err);
+		window.location.href="/login";
+	});
 }
 
 $(getCarsFromAPI);
