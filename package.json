@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/imagineLife/takehome/issues"
   },
-  "homepage": "https://github.com/imagineLife/takehome#readme"
+  "homepage": "https://github.com/imagineLife/takehome#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
