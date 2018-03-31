@@ -1,4 +1,15 @@
 const express = require('express');
 const app = express();
+const {PORT} = require('./config');
+
 app.use(express.static('public'));
-app.listen(process.env.PORT || 8080);
+
+app.get("/", (request, response) => {
+  response.sendFile(__dirname + '/public/index.html');
+});
+
+
+app.listen(PORT, () => {
+  console.log(`Your app is listening on port ${PORT}`);
+});
+
