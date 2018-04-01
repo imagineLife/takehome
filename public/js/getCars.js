@@ -18,14 +18,14 @@ function getCarsFromAPI(){
 
 //generate HTML table from API result data
 function generateTableHTML(data){
-	let rowsHTML = '';
+	let htmlRowString = '';
 	let carData = data.catalog.car;
 
 //for each API result, add a table row & corresponding cells
 	for(let i=0; i<carData.length; i++){
 		const currentCar = carData[i];
 
-		const rowHTML = (`<tr data-carID=${currentCar.id}>
+		const rowHTML = (`<tr data-carID=${currentCar.id} data-image=${currentCar.image}>
 	            <td>${currentCar.model}</td>
 	            <td>${currentCar.year}</td>
 	            <td>${currentCar.producer}</td>
@@ -34,16 +34,16 @@ function generateTableHTML(data){
 	            <td>.</td>
 	          </tr>`);
 
-		rowsHTML = rowsHTML + rowHTML;
+		htmlRowString = htmlRowString + rowHTML;
 	}
 
 	//build html table with, attach to car-table-body, 
-	displayTable($('.car-table-body'), rowsHTML);
+	displayTable($('.car-table-body'), htmlRowString);
 }
 
 //appends html rows to html table body element
-function displayTable(tBodyElem, rowsHTML ){
-	tBodyElem.append(rowsHTML);
+function displayTable(tBodyElem, htmlRowString ){
+	tBodyElem.append(htmlRowString);
 }
 
 //on table-row-click, update the car detail info
@@ -52,7 +52,9 @@ $('.car-table-body')
 
 	.on('click', 'tr', (e) =>{
 		let curTarget = e.currentTarget;
-		console.log('carID ->',curTarget.getAttribute('data-carid'))
+		let carID = curTarget.getAttribute('data-carid');
+		let imgStr = `./imgs/${curTarget.getAttribute('data-image')}`
+		console.log('carID ->',carID,'imageStr ->',imgStr);
 	})
 
 //Tells if there is a car currently in the car info div
