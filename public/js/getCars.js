@@ -7,11 +7,39 @@ function getCarsFromAPI(){
     };
 
 	$.ajax(APICallSettings)
-	.then((res) => console.log('done!', res))
+	.then(generateTableHTML)
 	.catch((err)=>{
 		console.log(err);
-		window.location.href="/login";
 	});
+}
+
+function generateTableHTML(data){
+	let rowsHTML = '';
+	let carData = data.catalog.car;
+
+	for(let i=0; i<carData.length; i++){
+		const currentCar = carData[i];
+
+		// console.log('currentCar ->',currentCar);
+		const rowHTML = (
+			`<tr>
+	            <td data-id=${currentCar.id}>${currentCar.model}</td>
+	            <td>${currentCar.year}</td>
+	            <td>${currentCar.producer}</td>
+	            <td>${currentCar.price}</td>
+	            <td>${currentCar.mileage}</td>
+	            <td>.</td>
+	          </tr>`
+	          );
+
+		rowsHTML = rowsHTML + rowHTML;
+	}
+
+	displayTable($('.car-table-body'), rowsHTML, $('.trip-table-total-miles'));
+}
+
+function displayTable(tBodyElem, rowsHTML ){
+	tBodyElem.append(rowsHTML);
 }
 
 $(getCarsFromAPI);
