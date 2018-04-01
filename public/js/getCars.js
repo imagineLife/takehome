@@ -21,16 +21,14 @@ function generateTableHTML(data){
 		const currentCar = carData[i];
 
 		// console.log('currentCar ->',currentCar);
-		const rowHTML = (
-			`<tr>
-	            <td data-id=${currentCar.id}>${currentCar.model}</td>
+		const rowHTML = (`<tr data-id=${currentCar.id}>
+	            <td>${currentCar.model}</td>
 	            <td>${currentCar.year}</td>
 	            <td>${currentCar.producer}</td>
 	            <td>${currentCar.price}</td>
 	            <td>${currentCar.mileage}</td>
 	            <td>.</td>
-	          </tr>`
-	          );
+	          </tr>`);
 
 		rowsHTML = rowsHTML + rowHTML;
 	}
