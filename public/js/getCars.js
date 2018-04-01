@@ -25,7 +25,7 @@ function generateTableHTML(data){
 	for(let i=0; i<carData.length; i++){
 		const currentCar = carData[i];
 
-		const rowHTML = (`<tr data-id=${currentCar.id}>
+		const rowHTML = (`<tr data-carID=${currentCar.id}>
 	            <td>${currentCar.model}</td>
 	            <td>${currentCar.year}</td>
 	            <td>${currentCar.producer}</td>
@@ -44,6 +44,20 @@ function generateTableHTML(data){
 //appends html rows to html table body element
 function displayTable(tBodyElem, rowsHTML ){
 	tBodyElem.append(rowsHTML);
+}
+
+//on table-row-click, update the car detail info
+//using event delegation
+$('.car-table-body')
+
+	.on('click', 'tr', (e) =>{
+		let curTarget = e.currentTarget;
+		console.log('carID ->',curTarget.getAttribute('data-carid'))
+	})
+
+//Tells if there is a car currently in the car info div
+function getCurrentlySelectedCarData(modelInput){
+	return (myInput && myInput.value ? 'has value' : 'doesnt have value')
 }
 
 $(getCarsFromAPI);
