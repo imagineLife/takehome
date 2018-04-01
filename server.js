@@ -12,7 +12,7 @@ app.get("/", (request, response) => {
 		  "catalog": {
 		    "car": [
 		      {
-		        "-id": "1",
+		        "id": "1",
 		        "model": "Skoda Fabia",
 		        "year": "2011",
 		        "producer": "Volkswagen",
@@ -24,7 +24,7 @@ app.get("/", (request, response) => {
 		        "image": "Fabia1.JPG"
 		      },
 		      {
-		        "-id": "2",
+		        "id": "2",
 		        "model": "Hyundai Getz",
 		        "year": "2008",
 		        "producer": "Hyundai",
@@ -36,7 +36,7 @@ app.get("/", (request, response) => {
 		        "image": "hyundai_getz2.jpg"
 		      },
 		      {
-		        "-id": "3",
+		        "id": "3",
 		        "model": "Hyundai i108",
 		        "year": "2014",
 		        "producer": "Hyundai",
@@ -48,7 +48,7 @@ app.get("/", (request, response) => {
 		        "image": "hyundaii108.jpg"
 		      },
 		      {
-		        "-id": "4",
+		        "id": "4",
 		        "model": "Aveo",
 		        "year": "2000",
 		        "producer": "Chevrolette",
