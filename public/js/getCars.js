@@ -21,7 +21,7 @@ function generateTableHTML(data){
 	let htmlRowString = '';
 	let carData = data.catalog.car;
 
-//for each API result, add a table row & corresponding cells
+	//for each API result, add a table row & corresponding cells
 	for(let i=0; i<carData.length; i++){
 		const currentCar = carData[i];
 
@@ -29,10 +29,10 @@ function generateTableHTML(data){
 	            <td>${currentCar.model}</td>
 	            <td>${currentCar.year}</td>
 	            <td>${currentCar.producer}</td>
-	            <td>${currentCar.price}</td>
+	            <td>${currentCar.price}$</td>
 	            <td class="hidden">${currentCar.owner}</td>
 	            <td class="hidden">${currentCar.tel}</td>
-	            <td >${currentCar.mileage}</td>
+	            <td >${currentCar.mileage} km</td>
 	            <td class="hidden">${currentCar.registered}</td>
 	            <td></td>
 	          </tr>`);
@@ -65,19 +65,23 @@ $('.car-table-body')
 
 		//clear the car-data form & car Image div if they have content
 
-		//put row data into array, use array to fill-out car-data form
+		//put row data into array
 	    let rowCells = selectedRow.children;
 	    let rowCellArray = Array.prototype.slice.call( rowCells );
 	    rowCellArray.map(function(row) {
 	    	cellTexts.push(row.innerText);
-	        // return $(this).text();
-	    });//.get();
+	    });
 
-	    console.log('cellTexts ->',cellTexts);
+	    //use rowCellArray to fill-out car-data form
+	    var elements = document.getElementById("carInfo").elements;
+
+		for (var i = 0, element; element = elements[i++];) {
+		    if (element.type == "text" && element.value === "")
+		    	element.value = cellTexts[i-2];
+		}
 
 		//send car image to image div
-
-
+		console.log(imgStr);
 
 	})
 
