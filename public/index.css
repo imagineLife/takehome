@@ -555,6 +555,13 @@ label{
 
 @media only screen and (min-width: 800px){
 
+	#carInfo{
+		overflow: visible;
+		width: 475px;
+		height: 175px;
+		font-size: 12px;
+	}
+
 	.wrapper{
 		height:600px;
 	}
@@ -563,9 +570,18 @@ label{
 		height:175px;
 	}
 
+	#carInfo label{
+		height:35px;
+	}
+
+	#carInfo input{
+		height: 25px;
+		width: 105px;
+	}
+
 	.formColumn{
-	    width: 40%;
+	    width: 45%;
 	    clear: none;
-	    margin-right: 70px;
+	    margin-right: 10px;
 	}
 }
