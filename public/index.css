@@ -470,10 +470,6 @@ body {
 	border:3px solid black;
 }
 
-.tableWrapper{
-	overflow: scroll;
-}
-
 .titleBar{
 	border-bottom: 5px solid black;
 }
@@ -491,7 +487,7 @@ body {
 
 .formColumn{
 	text-align: left;
-	width: 90%;
+	width: 85%;
 	display: inline-block;
 	float: left;
 	clear:right;
@@ -499,8 +495,9 @@ body {
 }
 
 label{
-	display:block;
+	display: block;
 	text-align: right;
+	margin-bottom: 4px;
 }
 
 #carImage{
@@ -528,8 +525,16 @@ label{
 	height: 20px;
 }
 
+.hidden{
+	display:none;
+}
+
 .model{
-	width: 150px;
+	width: 200px;
+}
+
+.year{
+	width:100px;
 }
 
 @media only screen and (min-width: 800px){
