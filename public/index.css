@@ -459,9 +459,13 @@ body {
 
 
 .wrapper{
-	border:3px solid black;
+	border:5px solid black;
 }
 
 .tableWrapper{
 	overflow: scroll;
+}
+
+.titleBar{
+	border-bottom: 5px solid black;
 }
