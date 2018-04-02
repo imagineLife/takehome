@@ -73,9 +73,10 @@ $('.car-table-body')
 	    });
 
 	    //use rowCellArray to fill-out car-data form
-	    var elements = document.getElementById("carInfo").elements;
-
-		for (var i = 0, element; element = elements[i++];) {
+	    let carForm = document.getElementById("carInfo");
+	    carForm.reset();
+	    let elements = carForm.elements;
+		for (let i = 0, element; element = elements[i++];) {
 		    if (element.type == "text" && element.value === "")
 		    	element.value = cellTexts[i-2];
 		}
