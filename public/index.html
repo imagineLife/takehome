@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/index.css">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TakeHome Project</title>
   </head>
   <body>
@@ -48,22 +48,24 @@
   			</button>
   			<input type="text" name="search" placeholder="search">
   		</form>
-  		<table id="dataTable">
-  			<thead>
-  				<tr>
-  					<th scope="col">Model</th>
-  					<th scope="col">Year</th>
-  					<th scope="col">Producer</th>
-  					<th scope="col">Price</th>
-  					<th scope="col" class="hidden">Owner</th>
-  					<th scope="col" class="hidden">Tel/Mobile</th>
-  					<th scope="col">Mileage</th>
-  					<th scope="col" class="hidden">Registered</th>
-  					<th scope="col"></th>
-  				</tr>
-  			</thead>
-          	<tbody class="car-table-body"></tbody>
-        </table>
+  		<div class="tableWrapper">
+	  		<table id="dataTable">
+	  			<thead>
+	  				<tr>
+	  					<th scope="col">Model</th>
+	  					<th scope="col">Year</th>
+	  					<th scope="col">Producer</th>
+	  					<th scope="col">Price</th>
+	  					<th scope="col" class="hidden">Owner</th>
+	  					<th scope="col" class="hidden">Tel/Mobile</th>
+	  					<th scope="col">Mileage</th>
+	  					<th scope="col" class="hidden">Registered</th>
+	  					<th scope="col"></th>
+	  				</tr>
+	  			</thead>
+	          	<tbody class="car-table-body"></tbody>
+	        </table>
+	    </div>
   		<div id="pageSelector">
   			<div id="page1">1</div>
   			<div id="page2">2</div>
