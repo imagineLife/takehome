@@ -25,7 +25,7 @@ function generateTableHTML(data){
 	for(let i=0; i<carData.length; i++){
 		const currentCar = carData[i];
 
-		const rowHTML = (`<tr data-carID=${currentCar.id} data-image=${currentCar.image}>
+		const rowHTML = (`<tr data-carID=${currentCar.id} data-image=${currentCar.image} class="tableRow">
 	            <td>${currentCar.model}</td>
 	            <td>${currentCar.year}</td>
 	            <td>${currentCar.producer}</td>
@@ -50,16 +50,27 @@ function displayTable(tBodyElem, htmlRowString ){
 //using event delegation
 $('.car-table-body')
 
-	.on('click', 'tr', (e) =>{
+	.on('click', 'tr.tableRow', (e) =>{
 
 		//store the row, carID & imageString
 		let selectedRow = e.currentTarget;
 		let carID = selectedRow.getAttribute('data-carid');
 		let imgStr = `./imgs/${selectedRow.getAttribute('data-image')}`
 
+		//empty array, to store row cell texts
+		let cellTexts = [];
+
 		//clear the car-data form & car Image div if they have content
 
-		//put row data into array, send to car-data form
+		//put row data into array, use array to fill-out car-data form
+	    let rowCells = selectedRow.children;
+	    let rowCellArray = Array.prototype.slice.call( rowCells );
+	    rowCellArray.map(function(row) {
+	    	cellTexts.push(row.innerText);
+	        // return $(this).text();
+	    });//.get();
+
+	    console.log('cellTexts ->',cellTexts);
 
 		//send car image to image div
 
