@@ -523,7 +523,7 @@ label{
 
 #searchBar input{
 	width: 150px;
-	height:27px;
+	height:23px;
 	border:none;
 }
 
@@ -588,6 +588,14 @@ td, th{
 
 .radio{
 	border-right: none;
+}
+
+.radioInput{
+	margin:0 15px;
+}
+
+.radioInput:not(:checked){
+	display: none;
 }
 
 @media only screen and (min-width: 800px){
