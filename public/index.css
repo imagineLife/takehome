@@ -462,6 +462,10 @@ body {
 	border:5px solid black;
 }
 
+.thinBorder{
+	border:3px solid black;
+}
+
 .tableWrapper{
 	overflow: scroll;
 }
@@ -476,7 +480,6 @@ body {
 }
 
 #carInfo input {
-	border:3px solid black;
 	padding: 3px
 }
 
@@ -493,3 +496,27 @@ label{
 	display:block;
 }
 
+#carImage{
+	text-align: center;
+}
+
+#searchBar{
+	width: 210px;
+    display: inline-block;
+    border: 3px solid black;
+    margin-right: 10px;
+    text-align: left;
+    margin-left: 37%;
+}
+
+#searchBar input{
+	width: 150px;
+}
+
+#searchBar *{
+	display: inline
+}
+
+.searchIcon img{
+	height: 20px;
+}
