@@ -474,3 +474,14 @@ body {
 	border: 1px solid black;
 	margin:15px;
 }
+
+.formColumn{
+	text-align: left;
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+
+label{
+	display:block;
+}
