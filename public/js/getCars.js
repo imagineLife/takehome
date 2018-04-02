@@ -30,7 +30,10 @@ function generateTableHTML(data){
 	            <td>${currentCar.year}</td>
 	            <td>${currentCar.producer}</td>
 	            <td>${currentCar.price}</td>
+	            <td>${currentCar.owner}</td>
+	            <td>${currentCar.tel}</td>
 	            <td>${currentCar.mileage}</td>
+	            <td>${currentCar.registered}</td>
 	            <td>.</td>
 	          </tr>`);
 
