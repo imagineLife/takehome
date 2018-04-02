@@ -450,7 +450,7 @@ template {
 
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: #252726;
   text-align: center;
   line-height: 1.5; 
@@ -519,4 +519,16 @@ label{
 
 .searchIcon img{
 	height: 20px;
+}
+
+.model{
+	width: 150px;
+}
+
+@media only screen and (min-width: 800px){
+	.wrapper{
+		max-width:800px;
+		maxi-height:600px;
+
+	}
 }
