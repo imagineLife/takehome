@@ -458,7 +458,7 @@ body {
 }
 
 
-.wrapper{
+.border{
 	border:5px solid black;
 }
 
@@ -475,6 +475,10 @@ body {
 	margin:15px;
 }
 
+#carInfo input {
+	border:3px solid black;
+}
+
 .formColumn{
 	text-align: left;
 	width: 50%;
@@ -485,3 +489,4 @@ body {
 label{
 	display:block;
 }
+
