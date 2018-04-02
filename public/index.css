@@ -450,7 +450,7 @@ template {
 
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #252726;
   text-align: center;
   line-height: 1.5; 
@@ -484,12 +484,14 @@ body {
 }
 
 #carInfo input {
-	padding: 3px
+	padding: 3px;
+	margin-left: 15px;
+	width:150px;
 }
 
 .formColumn{
 	text-align: left;
-	width: 80%;
+	width: 90%;
 	display: inline-block;
 	float: left;
 	clear:right;
@@ -498,6 +500,7 @@ body {
 
 label{
 	display:block;
+	text-align: right;
 }
 
 #carImage{
