@@ -80,8 +80,18 @@ $('.car-table-body')
 		    	element.value = cellTexts[i-2];
 		}
 
-		//send car image to image div
-		console.log(imgStr);
+		//clear any existing carImage, & send currently-selecte car image to image div
+		let carImgDiv = document.getElementById('carImage');
+
+		while (carImgDiv.lastChild) {
+		    carImgDiv.removeChild(carImgDiv.lastChild);
+		}
+
+		let imageToAppend = document.createElement("img");
+		imageToAppend.setAttribute('src', imgStr);
+		imageToAppend.setAttribute('class','carImage');
+		carImgDiv.append(imageToAppend);
+
 
 	})
 
