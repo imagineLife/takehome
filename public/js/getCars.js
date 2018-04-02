@@ -43,7 +43,7 @@ function generateTableHTML(data){
 
 //appends html rows to html table body element
 function displayTable(tBodyElem, htmlRowString ){
-	tBodyElem.append(htmlRowString);
+	return tBodyElem.append(htmlRowString);
 }
 
 //on table-row-click, update the car detail info
@@ -51,9 +51,11 @@ function displayTable(tBodyElem, htmlRowString ){
 $('.car-table-body')
 
 	.on('click', 'tr', (e) =>{
-		let curTarget = e.currentTarget;
-		let carID = curTarget.getAttribute('data-carid');
-		let imgStr = `./imgs/${curTarget.getAttribute('data-image')}`
+
+		//store the 
+		let selectedRow = e.currentTarget;
+		let carID = selectedRow.getAttribute('data-carid');
+		let imgStr = `./imgs/${selectedRow.getAttribute('data-image')}`
 		console.log('carID ->',carID,'imageStr ->',imgStr);
 	})
 
