@@ -457,6 +457,10 @@ body {
   padding:5px;
 }
 
+.wrapper{
+	max-width:800px;
+	max-height:600px;
+}
 
 .border{
 	border:5px solid black;
@@ -526,9 +530,10 @@ label{
 }
 
 @media only screen and (min-width: 800px){
-	.wrapper{
-		max-width:800px;
-		maxi-height:600px;
 
+	.formColumn{
+	    width: 40%;
+	    clear: none;
+	    margin-right: 70px;
 	}
 }
