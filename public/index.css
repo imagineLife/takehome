@@ -510,15 +510,18 @@ label{
     margin-right: 10px;
     text-align: left;
     margin-left: 37%;
+    border-radius: 15px;
 }
 
 #searchBar input{
 	width: 150px;
-	height:35px;
+	height:27px;
+	border:none;
 }
 
 #searchBar *{
-	display: inline
+	display: inline;
+	vertical-align: middle;
 }
 
 .searchIcon{
@@ -527,7 +530,7 @@ label{
 }
 
 .searchIcon img{
-	height: 20px;
+	height: 15px;
 }
 
 .hidden{
