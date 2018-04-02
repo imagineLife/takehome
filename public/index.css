@@ -471,19 +471,22 @@ body {
 }
 
 #carInfo fieldset{
-	border: 1px solid black;
+	border: 3px solid black;
 	margin:15px;
 }
 
 #carInfo input {
 	border:3px solid black;
+	padding: 3px
 }
 
 .formColumn{
 	text-align: left;
-	width: 50%;
+	width: 80%;
 	display: inline-block;
 	float: left;
+	clear:right;
+	clear:left;
 }
 
 label{
