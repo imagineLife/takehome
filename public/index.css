@@ -558,7 +558,28 @@ label{
 }
 
 .price, .mileage{
-	width:150px;
+	width:135px;
+}
+
+.radio{
+	width:45px;
+}
+
+th {
+	background-color: #CCCCCC;
+}
+
+.tableWrapper{
+	margin: 0 15px;
+}
+
+.tableRow{
+  height: 30px;
+  line-height: 30px;
+}
+
+.tableRow:nth-child(odd){
+  background-color: #EEEEEE;
 }
 
 @media only screen and (min-width: 800px){
