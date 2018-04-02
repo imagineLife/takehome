@@ -91,6 +91,9 @@ $('.car-table-body')
 		imgElement.setAttribute('class','carImage');
 		carImgDiv.append(imgElement);
 
+		//show radio button
+		let radioCell = $(rowCellArray[rowCellArray.length - 1].childNodes[0]);
+		radioCell.prop("checked", true);
 
 	})
 
