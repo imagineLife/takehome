@@ -469,3 +469,8 @@ body {
 .titleBar{
 	border-bottom: 5px solid black;
 }
+
+#carInfo fieldset{
+	border: 1px solid black;
+	margin:15px;
+}
