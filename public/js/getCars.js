@@ -52,11 +52,19 @@ $('.car-table-body')
 
 	.on('click', 'tr', (e) =>{
 
-		//store the 
+		//store the row, carID & imageString
 		let selectedRow = e.currentTarget;
 		let carID = selectedRow.getAttribute('data-carid');
 		let imgStr = `./imgs/${selectedRow.getAttribute('data-image')}`
-		console.log('carID ->',carID,'imageStr ->',imgStr);
+
+		//clear the car-data form & car Image div if they have content
+
+		//put row data into array, send to car-data form
+
+		//send car image to image div
+
+
+
 	})
 
 //Tells if there is a car currently in the car info div
