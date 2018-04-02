@@ -503,6 +503,7 @@ label{
 	text-align: center;
 	width:250px;
 	height:180px;
+	margin: 0 auto;
 }
 
 .carImageWrapper img{
@@ -592,8 +593,8 @@ label{
 	    clear: none;
 	    margin-right: 10px;
 	}
-
-	.carImageWrapper{
+	
+	#carImage{
 		display: inline-block;
 		margin-bottom: 15px;
 	}
