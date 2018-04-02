@@ -515,9 +515,8 @@ label{
 	width: 210px;
     display: inline-block;
     border: 3px solid black;
-    margin-right: 10px;
     text-align: left;
-    margin-left: 37%;
+    margin:5px 10px 0 37%;
     border-radius: 15px;
 }
 
@@ -639,5 +638,6 @@ td, th{
 
 	#searchBar{
 		margin-top: 30px;
+		margin-left: 71%;
 	}
 }
