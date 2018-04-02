@@ -34,7 +34,7 @@ function generateTableHTML(data){
 	            <td class="hidden">${currentCar.tel}</td>
 	            <td >${currentCar.mileage} km</td>
 	            <td class="hidden">${currentCar.registered}</td>
-	            <td></td>
+	            <td class="radio"></td>
 	          </tr>`);
 
 		htmlRowString = htmlRowString + rowHTML;
