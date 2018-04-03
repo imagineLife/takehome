@@ -426,7 +426,6 @@ body {
 
 #carInfo fieldset{
 	border: 3px solid black;
-	margin:15px;
 }
 
 #carInfo input {
@@ -599,7 +598,7 @@ td, th{
 	#carInfo{
 		/*overflow: unset;*/
 		width: 475px;
-		height: 175px;
+		height: 180px;
 		font-size: 12px;
 		display: inline-block;
 	}
