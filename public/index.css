@@ -613,7 +613,7 @@ td, th{
 		width: 475px;
 		height: 190px;
 		font-size: 12px;
-		display: inline-block;
+		float:left;
 	}
 
 	.wrapper{
@@ -631,9 +631,8 @@ td, th{
 
 	
 	#carImage{
-		display: inline-block;
-		margin-bottom: 15px;
-		margin-left: 20px;
+      margin: 8px 25px 0 0;
+      float: right
 	}
 
 	#searchBar{
