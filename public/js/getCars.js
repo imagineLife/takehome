@@ -102,4 +102,29 @@ function getCurrentlySelectedCarData(modelInput){
 	return (myInput && myInput.value ? 'has value' : 'doesnt have value')
 }
 
+//searchable-table function
+function filterTable() {
+
+  // Declare variables 
+  let searchBox, filterText, table, tr, td, i;
+  searchBox = document.getElementById("search");
+  filterText = searchBox.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (let i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      let tdText = td.innerHTML.toUpperCase();
+      if (td.innerHTML.toUpperCase().indexOf(filterText) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+
 $(getCarsFromAPI);
