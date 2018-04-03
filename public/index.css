@@ -424,9 +424,23 @@ body {
 	border-bottom: 4px solid black;
 }
 
+.rowWrapper{
+	height: 200px;
+}
+
 #carInfo fieldset{
 	border: 3px solid black;
+    margin: 0px; padding: 0px; display: block; position: relative; width: 100%;
+    %border-top: none !important; /* for IE7, does not work with Webkit */
+    _padding-top: 3em; } /* for IE6 */
 }
+
+fieldset > * {
+    width: auto;
+    %width: auto !important; /* for IE7 */
+    margin-left: 1.5em; /* emulating fieldset padding-left */
+    margin-left: 1.5em !important; 
+} /* for IE7 */
 
 #carInfo input {
 	padding: 3px;
@@ -453,7 +467,7 @@ label{
 #carImage{
 	text-align: center;
 	width:250px;
-	height:180px;
+	height:170px;
 	margin: 0 auto;
 }
 
@@ -596,19 +610,14 @@ td, th{
 @media only screen and (min-width: 775px){
 
 	#carInfo{
-		/*overflow: unset;*/
 		width: 475px;
-		height: 180px;
+		height: 190px;
 		font-size: 12px;
 		display: inline-block;
 	}
 
 	.wrapper{
 		height:600px;
-	}
-
-	#carInfo{
-		height:175px;
 	}
 
 	#carInfo label{
