@@ -597,6 +597,28 @@ td, th{
 	display: none;
 }
 
+#pageSelector{
+    float: right;
+    margin-right: 20px;
+    border: 3px solid;
+    padding: 2px 0;
+    margin-top: 15px;
+    box-shadow: 3px 5px;
+}
+
+.pgSelectorNumber{
+	display:inline;
+    padding: 3px 10px;
+}
+
+#page1{
+	background-color:#96BBF7;
+}
+
+#page1, #page2{
+	border-right: 3px solid;
+}
+
 @media only screen and (min-width: 800px){
 
 	#carInfo{
