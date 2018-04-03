@@ -482,6 +482,7 @@ body {
 	padding: 3px;
 	margin-left: 15px;
 	width:150px;
+	cursor: default;
 }
 
 .formColumn{
@@ -583,6 +584,7 @@ th {
 
 td, th{
 	border-right: 3px solid black;
+	cursor: pointer;
 }
 
 .radio{
@@ -609,6 +611,7 @@ td, th{
 .pgSelectorNumber{
 	display:inline;
     padding: 3px 10px;
+    cursor: pointer;
 }
 
 #page1{
