@@ -462,7 +462,7 @@ body {
 }
 
 .border{
-	border:5px solid black;
+	border:4px solid black;
 }
 
 .thinBorder{
@@ -470,7 +470,7 @@ body {
 }
 
 .titleBar{
-	border-bottom: 5px solid black;
+	border-bottom: 4px solid black;
 }
 
 #carInfo fieldset{
