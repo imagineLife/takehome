@@ -622,7 +622,27 @@ td, th{
 	border-right: 3px solid;
 }
 
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 400px){
+	.formColumn{
+		width:75%;
+	}
+}
+
+@media only screen and (min-width: 500px){
+	.formColumn{
+		width:70%;
+	}
+}
+
+@media only screen and (min-width: 625px){
+	.formColumn{
+	    width: 45%;
+	    clear: none;
+	    margin-right: 10px;
+	}
+}
+
+@media only screen and (min-width: 775px){
 
 	#carInfo{
 		overflow: unset;
@@ -649,11 +669,6 @@ td, th{
 		width: 105px;
 	}
 
-	.formColumn{
-	    width: 45%;
-	    clear: none;
-	    margin-right: 10px;
-	}
 	
 	#carImage{
 		display: inline-block;
