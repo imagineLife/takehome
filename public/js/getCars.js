@@ -1,5 +1,5 @@
 //API url
-let getCarsURL = '/getcars';
+const getCarsURL = '/getcars';
 
 //send ajax to API
 //then run table-generating function with API results
@@ -19,7 +19,7 @@ function getCarsFromAPI(){
 //generate HTML table from API result data
 function generateTableHTML(data){
 	let htmlRowString = '';
-	let carData = data.catalog.car;
+	const carData = data.catalog.car;
 
 	//for each API result, add a table row & corresponding cells
 	for(let i=0; i<carData.length; i++){
@@ -59,9 +59,9 @@ $('.car-table-body')
 	.on('click', 'tr.tableRow', (e) =>{
 
 		//store the row, carID & imageString
-		let selectedRow = e.currentTarget;
-		let carID = selectedRow.getAttribute('data-carid');
-		let imgStr = `./imgs/${selectedRow.getAttribute('data-image')}`
+		const selectedRow = e.currentTarget;
+		const carID = selectedRow.getAttribute('data-carid');
+		const imgStr = `./imgs/${selectedRow.getAttribute('data-image')}`
 
 		//empty array, to store row cell texts
 		let cellTexts = [];
@@ -69,33 +69,33 @@ $('.car-table-body')
 		//clear the car-data form & car Image div if they have content
 
 		//put row data into array
-	    let rowCells = selectedRow.children;
-	    let rowCellArray = Array.prototype.slice.call( rowCells );
+	    const rowCells = selectedRow.children;
+	    const rowCellArray = Array.prototype.slice.call( rowCells );
 	    rowCellArray.map(function(row) {
 	    	cellTexts.push(row.innerText);
 	    });
 
 	    //use rowCellArray to fill-out car-data form
-	    let carForm = document.getElementById("carInfo");
+	    const carForm = document.getElementById("carInfo");
 	    carForm.reset();
-	    let elements = carForm.elements;
+	    const elements = carForm.elements;
 		for (let i = 0, element; element = elements[i++];) {
 		    if (element.type == "text" && element.value === "")
 		    	element.value = cellTexts[i-2];
 		}
 
 		//clear any existing carImage, & send currently-selecte car image to image div
-		let carImgDiv = document.getElementById('carImage');
+		const carImgDiv = document.getElementById('carImage');
 		while (carImgDiv.lastChild) {
 		    carImgDiv.removeChild(carImgDiv.lastChild);
 		}
-		let imgElement = document.createElement("img");
+		const imgElement = document.createElement("img");
 		imgElement.setAttribute('src', imgStr);
 		imgElement.setAttribute('class','carImage');
 		carImgDiv.append(imgElement);
 
 		//show radio button
-		let radioCell = $(rowCellArray[rowCellArray.length - 1].childNodes[0]);
+		const radioCell = $(rowCellArray[rowCellArray.length - 1].childNodes[0]);
 		radioCell.prop("checked", true);
 
 	})
