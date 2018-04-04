@@ -80,8 +80,11 @@ $('.car-table-body')
 	    carForm.reset();
 	    const elements = carForm.elements;
 		for (let i = 0, element; element = elements[i++];) {
-		    if (element.type == "text" && element.value === "")
+		    if (element.type == "text" && element.value === ""){
 		    	element.value = cellTexts[i-2];
+		    }else{
+		    	return;
+		    }
 		}
 
 		//clear any existing carImage, & send currently-selecte car image to image div
