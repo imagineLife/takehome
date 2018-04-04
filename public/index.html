@@ -11,70 +11,72 @@
   		<div id="titleBar" class="titleBar">
   			Car reseller UI(800x600)
   		</div>
-  		<form id="carInfo">
-  			<fieldset>
-  				<legend>Car detail info</legend>
-  				<div class="formColumn">
-	  				<label for="model">Model
-	  					<input class="thinBorder" type="text" id="model" name="model" readonly>
-	  				</label>
-	  				<label for="year">Year
-	  					<input class="thinBorder" type="text" id="year" name="year" readonly>
-	  				</label>
-	  				<label for="producer">Producer
-	  					<input class="thinBorder" type="text" id="producer" name="producer" readonly>
-	  				</label>
-	  				<label for="price">Price
-	  					<input class="thinBorder" type="text" id="price" name="price" readonly>
-	  				</label>
-	  			</div>
-  				<div class="formColumn">
-	  				<label for="owner">Owner
-	  					<input class="thinBorder" type="text" id="owner" name="owner" readonly>
-	  				</label>
-	  				<label for="tel">Tel/Mobile
-	  					<input class="thinBorder" type="text" id="tel" name="tel" readonly>
-	  				</label>
-	  				<label for="mileage">Mileage
-	  					<input class="thinBorder" type="text" id="mileage" name="mileage" readonly>
-	  				</label>
-	  				<label for="registered">Registered
-	  					<input class="thinBorder" type="text" id="registered" name="registered" readonly>
-	  				</label>
-	  			</div>
-  				<input type="text" id="id" name="id" hidden>
-  			</fieldset>
-  		</form>
-  		<div id="carImage" class="carImageWrapper thinBorder"></div>
-  		<form id="searchBar" onsubmit="return false">
-  			<button class="searchIcon" type="button">
-  				<img src="imgs/searchGlass.png">
-  			</button>
-  			<input type="text" id="search" placeholder="search model" onkeyup="filterTable()">
-  		</form>
-  		<div class="tableWrapper thinBorder">
-	  		<table id="dataTable">
-	  			<thead>
-	  				<tr>
-	  					<th scope="col" class="model">Model</th>
-	  					<th scope="col" class="year">Year</th>
-	  					<th scope="col" class="producer">Producer</th>
-	  					<th scope="col" class="price">Price</th>
-	  					<th scope="col" class="hidden">Owner</th>
-	  					<th scope="col" class="hidden">Tel/Mobile</th>
-	  					<th scope="col" class="mileage">Mileage</th>
-	  					<th scope="col" class="hidden">Registered</th>
-	  					<th scope="col" class="radio"></th>
-	  				</tr>
-	  			</thead>
-	          	<tbody class="car-table-body"></tbody>
-	        </table>
-	    </div>
-  		<div id="pageSelector">
-  			<div id="page1" class="pgSelectorNumber">1</div>
-  			<div id="page2" class="pgSelectorNumber">2</div>
-  			<div id="Next" class="pgSelectorNumber">Next</div>
-  		</div>
+  		<div class="innerWrapper">
+	  		<form id="carInfo">
+	  			<fieldset>
+	  				<legend>Car detail info</legend>
+	  				<div class="formColumn">
+		  				<label for="model">Model
+		  					<input class="thinBorder" type="text" id="model" name="model" readonly>
+		  				</label>
+		  				<label for="year">Year
+		  					<input class="thinBorder" type="text" id="year" name="year" readonly>
+		  				</label>
+		  				<label for="producer">Producer
+		  					<input class="thinBorder" type="text" id="producer" name="producer" readonly>
+		  				</label>
+		  				<label for="price">Price
+		  					<input class="thinBorder" type="text" id="price" name="price" readonly>
+		  				</label>
+		  			</div>
+	  				<div class="formColumn">
+		  				<label for="owner">Owner
+		  					<input class="thinBorder" type="text" id="owner" name="owner" readonly>
+		  				</label>
+		  				<label for="tel">Tel/Mobile
+		  					<input class="thinBorder" type="text" id="tel" name="tel" readonly>
+		  				</label>
+		  				<label for="mileage">Mileage
+		  					<input class="thinBorder" type="text" id="mileage" name="mileage" readonly>
+		  				</label>
+		  				<label for="registered">Registered
+		  					<input class="thinBorder" type="text" id="registered" name="registered" readonly>
+		  				</label>
+		  			</div>
+	  				<input type="text" id="id" name="id" hidden>
+	  			</fieldset>
+	  		</form>
+	  		<div id="carImage" class="carImageWrapper thinBorder"></div>
+	  		<form id="searchBar" onsubmit="return false">
+	  			<button class="searchIcon" type="button">
+	  				<img src="imgs/searchGlass.png">
+	  			</button>
+	  			<input type="text" id="search" placeholder="search model" onkeyup="filterTable()">
+	  		</form>
+	  		<div class="tableWrapper thinBorder">
+		  		<table id="dataTable">
+		  			<thead>
+		  				<tr>
+		  					<th scope="col" class="model">Model</th>
+		  					<th scope="col" class="year">Year</th>
+		  					<th scope="col" class="producer">Producer</th>
+		  					<th scope="col" class="price">Price</th>
+		  					<th scope="col" class="hidden">Owner</th>
+		  					<th scope="col" class="hidden">Tel/Mobile</th>
+		  					<th scope="col" class="mileage">Mileage</th>
+		  					<th scope="col" class="hidden">Registered</th>
+		  					<th scope="col" class="radio"></th>
+		  				</tr>
+		  			</thead>
+		          	<tbody class="car-table-body"></tbody>
+		        </table>
+		    </div>
+	  		<div id="pageSelector">
+	  			<div id="page1" class="pgSelectorNumber">1</div>
+	  			<div id="page2" class="pgSelectorNumber">2</div>
+	  			<div id="Next" class="pgSelectorNumber">Next</div>
+	  		</div>
+	  	</div>
   	</div>
   	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   	<script src="js/getCars.js"></script>
