@@ -80,8 +80,11 @@ $('.car-table-body')
 	    carForm.reset();
 	    const elements = carForm.elements;
 		for (let i = 0, element; element = elements[i++];) {
-		    if (element.type == "text" && element.value === "")
+		    if (element.type == "text" && element.value === "" && element.type !== "fieldset"){
 		    	element.value = cellTexts[i-2];
+		    }else{
+		    	console.log(element.type)
+		    }
 		}
 
 		//clear any existing carImage, & send currently-selecte car image to image div
@@ -95,7 +98,7 @@ $('.car-table-body')
 		carImgDiv.append(imgElement);
 
 		//show radio button
-		const radioCell = $(rowCellArray[rowCellArray.length - 1].childNodes[0]);
+		let radioCell = $(rowCellArray[rowCellArray.length - 1].childNodes[0]);
 		radioCell.prop("checked", true);
 
 	})
