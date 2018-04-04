@@ -532,10 +532,6 @@ th {
 	background-color: #CCCCCC;
 }
 
-.tableWrapper{
-	margin: 0 15px;
-}
-
 .tableRow{
   height: 30px;
   line-height: 30px;
@@ -584,6 +580,10 @@ td, th{
 
 #page1, #page2{
 	border-right: 3px solid;
+}
+
+.innerWrapper{
+  padding:10px;
 }
 
 @media only screen and (min-width: 400px){
