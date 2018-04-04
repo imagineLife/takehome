@@ -409,7 +409,8 @@ body {
 }
 
 .wrapper{
-	max-width:800px;
+	height:600px;
+  width:800px;
 }
 
 .border{
@@ -427,6 +428,13 @@ body {
 
 .rowWrapper{
 	height: 200px;
+}
+
+#carInfo{
+  width: 475px;
+  height: 190px;
+  font-size: 12px;
+  float:left;
 }
 
 #carInfo fieldset{
@@ -448,20 +456,11 @@ legend{
   padding: 0 3px;
 }
 
-#carInfo input {
-	padding: 3px;
-	margin-left: 15px;
-	width:150px;
-	cursor: default;
-}
-
 .formColumn{
 	text-align: left;
-	width: 85%;
 	display: inline-block;
-	float: left;
-	clear:right;
-	clear:left;
+  width: 45%;
+  margin-right: 10px;
 }
 
 label{
@@ -603,25 +602,6 @@ td, th{
     border-top: 4px solid black;
 }
 
-@media only screen and (min-width: 400px){
-	.formColumn{
-		width:75%;
-	}
-}
-
-@media only screen and (min-width: 500px){
-	.formColumn{
-		width:70%;
-	}
-}
-
-@media only screen and (min-width: 625px){
-	.formColumn{
-	    width: 45%;
-	    clear: none;
-	    margin-right: 10px;
-	}
-}
 
 @media only screen and (min-width: 775px){
 
@@ -632,16 +612,15 @@ td, th{
 		float:left;
 	}
 
-	.wrapper{
-		height:600px;
-	}
-
 	#carInfo label{
 		height:35px;
 	}
 
 	#carInfo input{
-		height: 25px;
+    padding: 3px;
+    margin-left: 15px;
+    cursor: default;
+    height: 25px;
 		width: 105px;
 	}
 
