@@ -441,6 +441,11 @@ fieldset > * {
     margin-left: 1.5em !important; 
 } /* for IE7 */
 
+legend{
+  margin: 0 5px;
+  padding: 0 3px;
+}
+
 #carInfo input {
 	padding: 3px;
 	margin-left: 15px;
@@ -544,6 +549,7 @@ th {
 td, th{
 	border-right: 3px solid black;
 	cursor: pointer;
+  padding-left: 5px;
 }
 
 .radio{
