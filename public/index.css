@@ -399,6 +399,7 @@ template {
 }
 
 body {
+  position: absolute;
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 14px;
   color: #252726;
@@ -590,6 +591,15 @@ td, th{
 
 .innerWrapper{
   padding: 15px;
+}
+
+.footerBar{
+    position: absolute;
+    height: 35px;
+    bottom: 0;
+    left: 5px;
+    right: 5px;
+    border-top: 4px solid black;
 }
 
 @media only screen and (min-width: 400px){
