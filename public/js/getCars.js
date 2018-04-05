@@ -1,3 +1,4 @@
+let apiResult;
 //send ajax to API
 //then run table-generating function with API results
 function getCarsFromAPI(){
@@ -16,11 +17,11 @@ function getCarsFromAPI(){
 //generate HTML table from API result data
 function generateTableHTML(data){
 	let htmlRowString = '';
-	const carData = data.catalog.car;
+	apiResult = data.catalog.car;
 
 	//for each API result, add a table row & corresponding cells
-	for(let i=0; i<carData.length; i++){
-		const currentCar = carData[i];
+	for(let i=0; i<apiResult.length; i++){
+		const currentCar = apiResult[i];
 
 		const rowHTML = (`<tr data-carID=${currentCar.id} data-image=${currentCar.image} class="tableRow">
 	            <td>${currentCar.model}</td>
