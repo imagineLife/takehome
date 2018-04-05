@@ -1,11 +1,8 @@
-//API url
-const getCarsURL = '/getcars';
-
 //send ajax to API
 //then run table-generating function with API results
 function getCarsFromAPI(){
 	const APICallSettings = {
-      url: getCarsURL,  
+      url: '/getcars',  
       dataType: 'json'
     };
 
