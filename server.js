@@ -9,8 +9,7 @@ app.get("/", (request, response) => {
 });
 
 	let carData = {
-		{
-		  "catalog": {
+		"catalog": {
 		    "car": [
 		      {
 		        "-id": "1",
@@ -98,7 +97,6 @@ app.get("/", (request, response) => {
 		      }
 		    ]
 		  }
-		}
 	};
 
 app.get("/getcars",
