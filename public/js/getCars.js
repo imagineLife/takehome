@@ -148,5 +148,9 @@ function filterTable() {
   }
 }
 
+$('.pgSelectorNumber')
+	.on('click', (e) => {
+		console.log('clicked ->',e.currentTarget.innerText);
+	})
 
 $(getCarsFromAPI);
