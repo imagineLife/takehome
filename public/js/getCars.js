@@ -3,7 +3,7 @@ let apiResult;
 
 //lookup table for pager & number of table rows
 const selectorReference = {
-	"one":5
+	"one":4
 }
 
 //send ajax to API
@@ -22,6 +22,7 @@ function getCarsFromAPI(){
 }
 
 const getPageSelected = pageWrapper => pageWrapper.data('selected');
+const getNumberOfRows = pageSelected => selectorReference[pageSelected];
 
 //generate HTML table from API result data
 function generateTableHTML(data){
@@ -30,12 +31,11 @@ function generateTableHTML(data){
 
 
 	let pageSelected = getPageSelected($('.pageSelector'));
-	console.log('pageSelected ->',pageSelected);
-
-
+	let numberOfHTMLrows = getNumberOfRows(pageSelected);
+	console.log('numberOfHTMLrows ->',numberOfHTMLrows);
 
 	//for each API result, add a table row & corresponding cells
-	for(let i=0; i<apiResult.length; i++){
+	for(let i = numberOfHTMLrows = 5 ? 0 : 4; i < (numberOfHTMLrows = 5 ? 4 : 8); i++){
 		const currentCar = apiResult[i];
 
 		const rowHTML = (`<tr data-carID=${currentCar.id} data-image=${currentCar.image} class="tableRow">
@@ -59,6 +59,8 @@ function generateTableHTML(data){
 
 	//select the first table row
 	$('.tableRow:first').click();
+
+	console.log('done building table');
 }
 
 //appends html rows to html table body element
