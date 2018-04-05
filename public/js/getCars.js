@@ -4,7 +4,7 @@ let apiResult;
 
 //lookup table for pager & number of table rows
 const selectorReference = {
-	"one":4
+	1:4
 }
 
 //send ajax to API
@@ -16,7 +16,10 @@ function getCarsFromAPI(){
     };
 
 	$.ajax(APICallSettings)
-	.then(generateTableHTML)
+	.then((data)=>{
+		apiResult = data.catalog.car;
+		generateTableHTML(data);
+	})
 	.catch((err)=>{
 		console.log(err);
 	});
@@ -42,8 +45,6 @@ function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute(
 //generate HTML table from API result data
 function generateTableHTML(data){
 	let htmlRowString = '';
-	apiResult = data.catalog.car;
-
 
 	let pageSelected = getPageSelected($('.pageSelector'));
 	let numberOfHTMLrows = getNumberOfRows(pageSelected);
@@ -155,8 +156,9 @@ function filterTable() {
 
 $('.pgSelectorNumber')
 	.on('click', (e) => {
-		console.log('clicked ->',e.currentTarget.innerText);
-		setDataAttr(e.currentTarget.innerText);
+		const clickedText = e.currentTarget.innerText;
+		console.log('clicked ->',clickedText);
+		setDataAttr(clickedText);
 	})
 
 $(getCarsFromAPI);
