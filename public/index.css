@@ -588,12 +588,12 @@ td, th{
     cursor: pointer;
 }
 
-#page1{
-	background-color:#96BBF7;
-}
-
 #page1, #page2{
 	border-right: 3px solid;
+}
+
+.selected{
+  background-color:#96BBF7;
 }
 
 .innerWrapper{
