@@ -1,15 +1,13 @@
-//stores the API carData results
 let apiResult;
-// const pagerWrapper = document.querySelector('.pageSelector');
 
-//lookup table for pager & number of table rows
+//lookup table for paging & number of table rows
 const selectorReference = {
 	1:4,
 	2:3
 }
 
 //send ajax to API
-//then run table-generating function with API results
+//& run table-generating function with API results
 function getCarsFromAPI(){
 	const APICallSettings = {
       url: '/getcars',  
@@ -36,16 +34,18 @@ const getNumberOfRows = pageSelected => selectorReference[pageSelected];
 function displayTable(tBodyElem, htmlRowString ){tBodyElem.append(htmlRowString)};
 
 //sets data-attribute of pageSelector wrapper
-function setDataAttr(val){
-		return document.querySelector('.pageSelector').setAttribute('data-selected', val)
-	};
+function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute('data-selected', val) };
+
+function getDataAttr(){
+	return document.querySelector('.pageSelector').getAttribute('data-selected')
+}
 
 //generate HTML table from API result data
 function generateTableHTML(data){
 
 	let htmlRowString = '';
 
-	let selectedAttr = document.querySelector('.pageSelector').getAttribute('data-selected');
+	let selectedAttr = getDataAttr();
 	
 	let numberOfHTMLrows = getNumberOfRows(selectedAttr);
 
@@ -153,10 +153,14 @@ function filterTable() {
 
 $('.pgSelectorNumber')
 	.on('click', (e) => {
-		setDataAttr(e.currentTarget.innerText);
-
-		$('tbody tr').remove();
-		generateTableHTML(apiResult);
+		selectedAttr = getDataAttr();
+		if(e.currentTarget.innerText == selectedAttr){
+			return;
+		}else{
+			setDataAttr(e.currentTarget.innerText);
+			$('tbody tr').remove();
+			generateTableHTML(apiResult);
+		}
 	})
 
 $(getCarsFromAPI);
