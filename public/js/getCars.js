@@ -72,7 +72,7 @@ function generateTableHTML(data){
 		htmlRowString = htmlRowString + rowHTML;
 	}
 
-	//build html table with, attach to car-table-body
+	//build html table & attach to car-table-body
 	displayTable($('.car-table-body'), htmlRowString);
 
 
@@ -80,8 +80,7 @@ function generateTableHTML(data){
 
 }
 
-//on table-row-click, update the car detail info
-//using event delegation
+//update the car detail info on table-row-click
 $('.car-table-body')
 
 	.on('click', 'tr.tableRow', (e) =>{
@@ -91,10 +90,8 @@ $('.car-table-body')
 		const carID = selectedRow.getAttribute('data-carid');
 		const imgStr = `./imgs/${selectedRow.getAttribute('data-image')}`
 
-		//empty array, to store row cell texts
+		//for storing row cell data
 		let cellTexts = [];
-
-		//clear the car-data form & car Image div if they have content
 
 		//put row data into array
 	    const rowCells = selectedRow.children;
@@ -103,7 +100,7 @@ $('.car-table-body')
 	    	cellTexts.push(row.innerText);
 	    });
 
-	    //use rowCellArray to fill-out car-data form
+	    //use array of table cell data to fill-out car-data form
 	    const carForm = document.getElementById("carInfo");
 	    carForm.reset();
 	    const elements = carForm.elements;
@@ -113,7 +110,7 @@ $('.car-table-body')
 		    }else null
 		}
 
-		//clear any existing carImage, & send currently-selecte car image to image div
+		//clear any existing carImage, & send currently-selected car image to image div
 		const carImgDiv = document.getElementById('carImage');
 		while (carImgDiv.lastChild) {
 		    carImgDiv.removeChild(carImgDiv.lastChild);
@@ -153,6 +150,7 @@ function filterTable() {
   }
 }
 
+//configures paging click function
 $('.pgSelectorNumber')
 	.on('click', (e) => {
 		selectedAttr = getDataAttr();
