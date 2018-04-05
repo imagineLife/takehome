@@ -21,10 +21,18 @@ function getCarsFromAPI(){
 	});
 }
 
+const getPageSelected = pageWrapper => pageWrapper.data('selected');
+
 //generate HTML table from API result data
 function generateTableHTML(data){
 	let htmlRowString = '';
 	apiResult = data.catalog.car;
+
+
+	let pageSelected = getPageSelected($('.pageSelector'));
+	console.log('pageSelected ->',pageSelected);
+
+
 
 	//for each API result, add a table row & corresponding cells
 	for(let i=0; i<apiResult.length; i++){
