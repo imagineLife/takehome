@@ -34,7 +34,9 @@ const getNumberOfRows = pageSelected => selectorReference[pageSelected];
 function displayTable(tBodyElem, htmlRowString ){tBodyElem.append(htmlRowString)};
 
 //sets data-attribute of pageSelector wrapper
-function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute('data-selected', val) };
+function setDataAttr(val){
+	return document.querySelector('.pageSelector').setAttribute('data-selected', val)
+};
 
 function getDataAttr(){
 	return document.querySelector('.pageSelector').getAttribute('data-selected')
