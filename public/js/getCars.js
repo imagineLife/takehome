@@ -39,6 +39,7 @@ function generateTableHTML(data){
 	}
 
 	//build html table with, attach to car-table-body, 
+	displayTable($('.car-table-body'), '');
 	displayTable($('.car-table-body'), htmlRowString);
 
 	//select the first table row
