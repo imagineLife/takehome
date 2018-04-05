@@ -1,4 +1,11 @@
+//stores the API carData results
 let apiResult;
+
+//lookup table for pager & number of table rows
+const selectorReference = {
+	"one":5
+}
+
 //send ajax to API
 //then run table-generating function with API results
 function getCarsFromAPI(){
