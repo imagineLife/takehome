@@ -23,7 +23,21 @@ function getCarsFromAPI(){
 }
 
 const getPageSelected = pageWrapper => pageWrapper.data('selected');
+
 const getNumberOfRows = pageSelected => selectorReference[pageSelected];
+
+//appends html rows to html table body element
+function displayTable(tBodyElem, htmlRowString ){
+	return tBodyElem.append(htmlRowString);
+}
+
+//Tells if there is a car currently in the car info div
+function getCurrentlySelectedCarData(modelInput){
+	return (myInput && myInput.value ? 'has value' : 'doesnt have value')
+}
+
+//sets data-attribute of pageSelector wrapper
+function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute('data-selected', val) };
 
 //generate HTML table from API result data
 function generateTableHTML(data){
@@ -62,11 +76,6 @@ function generateTableHTML(data){
 	$('.tableRow:first').click();
 
 	console.log('done building table');
-}
-
-//appends html rows to html table body element
-function displayTable(tBodyElem, htmlRowString ){
-	return tBodyElem.append(htmlRowString);
 }
 
 //on table-row-click, update the car detail info
@@ -120,11 +129,6 @@ $('.car-table-body')
 
 	})
 
-//Tells if there is a car currently in the car info div
-function getCurrentlySelectedCarData(modelInput){
-	return (myInput && myInput.value ? 'has value' : 'doesnt have value')
-}
-
 //searchable-table function
 function filterTable() {
 
@@ -148,9 +152,6 @@ function filterTable() {
     } 
   }
 }
-
-function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute('data-selected', val) };
-
 
 $('.pgSelectorNumber')
 	.on('click', (e) => {
