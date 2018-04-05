@@ -1,5 +1,6 @@
 //stores the API carData results
 let apiResult;
+// const pagerWrapper = document.querySelector('.pageSelector');
 
 //lookup table for pager & number of table rows
 const selectorReference = {
@@ -148,9 +149,13 @@ function filterTable() {
   }
 }
 
+function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute('data-selected', val) };
+
+
 $('.pgSelectorNumber')
 	.on('click', (e) => {
 		console.log('clicked ->',e.currentTarget.innerText);
+		setDataAttr(e.currentTarget.innerText);
 	})
 
 $(getCarsFromAPI);
