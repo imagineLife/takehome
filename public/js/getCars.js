@@ -4,7 +4,8 @@ let apiResult;
 
 //lookup table for pager & number of table rows
 const selectorReference = {
-	1:4
+	1:4,
+	2:3
 }
 
 //send ajax to API
@@ -18,41 +19,41 @@ function getCarsFromAPI(){
 	$.ajax(APICallSettings)
 	.then((data)=>{
 		apiResult = data.catalog.car;
-		generateTableHTML(data);
-	})
+		generateTableHTML(apiResult);
+	}).then( () => $('.tableRow:first').click())
 	.catch((err)=>{
 		console.log(err);
 	});
 }
 
+//gets data-selected HTML attribute 
 const getPageSelected = pageWrapper => pageWrapper.data('selected');
 
+//gets number of rows to display from lookup table
 const getNumberOfRows = pageSelected => selectorReference[pageSelected];
 
 //appends html rows to html table body element
-function displayTable(tBodyElem, htmlRowString ){
-	return tBodyElem.append(htmlRowString);
-}
-
-//Tells if there is a car currently in the car info div
-function getCurrentlySelectedCarData(modelInput){
-	return (myInput && myInput.value ? 'has value' : 'doesnt have value')
-}
+function displayTable(tBodyElem, htmlRowString ){tBodyElem.append(htmlRowString)};
 
 //sets data-attribute of pageSelector wrapper
-function setDataAttr(val){ document.querySelector('.pageSelector').setAttribute('data-selected', val) };
+function setDataAttr(val){
+		return document.querySelector('.pageSelector').setAttribute('data-selected', val)
+	};
 
 //generate HTML table from API result data
 function generateTableHTML(data){
+
 	let htmlRowString = '';
 
-	let pageSelected = getPageSelected($('.pageSelector'));
-	let numberOfHTMLrows = getNumberOfRows(pageSelected);
-	console.log('numberOfHTMLrows ->',numberOfHTMLrows);
+	let selectedAttr = document.querySelector('.pageSelector').getAttribute('data-selected');
+	
+	let numberOfHTMLrows = getNumberOfRows(selectedAttr);
+
+	let whereToStartLoop = (numberOfHTMLrows == 4 ? 0 : 4);
 
 	//for each API result, add a table row & corresponding cells
-	for(let i = numberOfHTMLrows = 5 ? 0 : 4; i < (numberOfHTMLrows = 5 ? 4 : 8); i++){
-		const currentCar = apiResult[i];
+	for(let i = whereToStartLoop; i < numberOfHTMLrows + whereToStartLoop; i++){
+		const currentCar = data[i];
 
 		const rowHTML = (`<tr data-carID=${currentCar.id} data-image=${currentCar.image} class="tableRow">
 	            <td>${currentCar.model}</td>
@@ -69,14 +70,12 @@ function generateTableHTML(data){
 		htmlRowString = htmlRowString + rowHTML;
 	}
 
-	//build html table with, attach to car-table-body, 
-	$('.car-table-body').append('');
+	//build html table with, attach to car-table-body
 	displayTable($('.car-table-body'), htmlRowString);
 
-	//select the first table row
-	$('.tableRow:first').click();
 
-	console.log('done building table');
+	htmlRowString = '';
+
 }
 
 //on table-row-click, update the car detail info
@@ -109,9 +108,7 @@ $('.car-table-body')
 		for (let i = 0, element; element = elements[i++];) {
 		    if (element.type == "text" && element.value === "" && element.type !== "fieldset"){
 		    	element.value = cellTexts[i-2];
-		    }else{
-		    	console.log(element.type)
-		    }
+		    }else null
 		}
 
 		//clear any existing carImage, & send currently-selecte car image to image div
@@ -156,9 +153,10 @@ function filterTable() {
 
 $('.pgSelectorNumber')
 	.on('click', (e) => {
-		const clickedText = e.currentTarget.innerText;
-		console.log('clicked ->',clickedText);
-		setDataAttr(clickedText);
+		setDataAttr(e.currentTarget.innerText);
+
+		$('tbody tr').remove();
+		generateTableHTML(apiResult);
 	})
 
 $(getCarsFromAPI);
