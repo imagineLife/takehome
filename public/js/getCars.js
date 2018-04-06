@@ -173,8 +173,6 @@ $('.pgSelectorNumber')
 			$('tbody tr').remove();
 			generateTableHTML(apiResult);
 
-			//store carForm model value
-
 			//filter through each table row, adding radio to selected row where found
 			const formModelVal = document.getElementById('model').value;
 			const numberOfRows = document.getElementById("dataTable").rows.length -1;
@@ -184,8 +182,6 @@ $('.pgSelectorNumber')
 					document.getElementsByClassName("tableRow")[i].click()
 				}
 			}
-
-			// $(this).addClass('selected');	
 
 		}
 	})
