@@ -47,11 +47,11 @@ function generateTableHTML(data){
 
 	let htmlRowString = '';
 
-	let selectedAttr = getDataAttr();
+	const selectedAttr = getDataAttr();
 	
-	let numberOfHTMLrows = getNumberOfRows(selectedAttr);
+	const numberOfHTMLrows = getNumberOfRows(selectedAttr);
 
-	let whereToStartLoop = (numberOfHTMLrows == 4 ? 0 : 4);
+	const whereToStartLoop = (numberOfHTMLrows == 4 ? 0 : 4);
 
 	//for each API result, add a table row & corresponding cells
 	for(let i = whereToStartLoop; i < numberOfHTMLrows + whereToStartLoop; i++){
@@ -160,11 +160,33 @@ $('.pgSelectorNumber')
 			return;
 		//if clicking different page than displayed, update table rows			
 		}else{
+
+			//update class & color of paging buttons
+			const links = $('.pgSelectorNumber');
+			links.removeClass('selected');
+			$(e.currentTarget).addClass('selected');
+
+			//set page number to data attribute
 			setDataAttr(e.currentTarget.innerText);
+
+			//update html table rows
 			$('tbody tr').remove();
 			generateTableHTML(apiResult);
 
-			
+			//store carForm model value
+
+			//filter through each table row, adding radio to selected row where found
+			const formModelVal = document.getElementById('model').value;
+			const numberOfRows = document.getElementById("dataTable").rows.length -1;
+			for( let i=0; i < numberOfRows; i++){
+				const singleRowModelCell = document.getElementsByClassName("tableRow")[i].cells[0].innerHTML;
+				if(formModelVal == singleRowModelCell){
+					document.getElementsByClassName("tableRow")[i].click()
+				}
+			}
+
+			// $(this).addClass('selected');	
+
 		}
 	})
 
