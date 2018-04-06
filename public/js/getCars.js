@@ -154,12 +154,17 @@ function filterTable() {
 $('.pgSelectorNumber')
 	.on('click', (e) => {
 		selectedAttr = getDataAttr();
+
+		//if clicking the same page, do nothing
 		if(e.currentTarget.innerText == selectedAttr){
 			return;
+		//if clicking different page than displayed, update table rows			
 		}else{
 			setDataAttr(e.currentTarget.innerText);
 			$('tbody tr').remove();
 			generateTableHTML(apiResult);
+
+			
 		}
 	})
 
